@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NoiDung from './components/NoiDung';
 
 class App extends Component {
 
@@ -42,6 +43,7 @@ class App extends Component {
     console.log(this.state.trangthai);
     return (
       <div>
+        <NoiDung name={this.state.trangthai}/>
         <button onClick={() => this.capNhatState()}> Click</button>
       </div>
     );
