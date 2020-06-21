@@ -48,3 +48,20 @@
   overflow: hidden;
   min-width: 40vh;
 }
+
+.masthead {
+  background: tomato;
+}
+.container {
+  text-align: left;
+}
+
+ul.navbar-nav.ml-auto li a {
+  display: block;
+  padding: 10px;
+}
+
+#mainNav .navbar-nav>li>a.active {
+  color: #fdcc52!important;
+  background: rgba(0,123,255,.25);
+}

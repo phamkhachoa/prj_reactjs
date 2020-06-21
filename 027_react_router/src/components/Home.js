@@ -18,7 +18,7 @@ class Home extends Component {
                   <div className="device-mockup iphone6_plus portrait white">
                     <div className="device">
                       <div className="screen">
-                        <img src="https://blackrockdigital.github.io/startbootstrap-new-age/img/demo-screen-1.jpg" className="img-fluid" alt="" />
+                        <img src="https://startbootstrap.github.io/startbootstrap-new-age/img/demo-screen-1.jpg" className="img-thumbnail" alt="" />
                       </div>
                       <div className="button">
                       </div>
