@@ -17,6 +17,13 @@ class Contact extends Component {
     })
   }
 
+  isFileChange = (event) => {
+    const img = event.target.files[0].name;
+    this.setState({
+      fAnh : img
+    })
+  }
+
   submitForm = (event) => {
     event.preventDefault();
     this.setState({
@@ -30,6 +37,8 @@ class Contact extends Component {
     noiDung += " / Email nhan duoc la: " + this.state.fEmail;
     noiDung += " / Phone nhan duoc la: " + this.state.fPhone;
     noiDung += " / Mess nhan duoc la: " + this.state.fMess;
+    noiDung += " / Ngay nhan duoc la: " + this.state.fNgay;
+    noiDung += " / Anh nhan duoc la: " + this.state.fAnh;
     return noiDung;
 
   }
@@ -101,6 +110,21 @@ class Contact extends Component {
                       <label>Message</label><textarea className="form-control" name ="fMess" id="message" rows={5} placeholder="Message" required="required" data-validation-required-message="Please enter a message." defaultValue={""} onChange={(event) =>{this.isChange(event)}}/>
                       <p className="help-block text-danger" />
                     </div>
+                  </div>
+                  <div className="control-group">
+                      <label>Chọn Ngày</label>
+                      <select className="form-control" name="fNgay" onChange={(event) => {this.isChange(event)}}>
+                        <option value="3">Thứ 3</option>
+                        <option value="5">Thứ 5</option>
+                        <option value="7">Thứ 7</option>
+                      </select>
+                  </div>
+                  <br/>
+                  <div className="control-group">
+                      <label>Chọn File: </label>
+                      <div className="form-group">
+                        <input type="file" className="form-control-file" name="fAnh" onChange={(event) =>{this.isFileChange(event)}} aria-describedby="fileHelpId" />
+                      </div>
                   </div>
                   <br />
                   <div id="success" />
