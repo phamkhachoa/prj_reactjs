@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Hoa Pham",
+        "tel": "0909090909",
+        "permission": 1
+
+    },
+    {
+        "id": 2,
+        "name": "Iron mman",
+        "tel": "0909090909",
+        "permission": 2
+
+    },
+    {
+        "id": 3,
+        "name": "Caption",
+        "tel": "0909090909",
+        "permission": 1
+
+    },
+    {
+        "id": 4,
+        "name": "Blabla",
+        "tel": "0909090909",
+        "permission": 3
+
+    },
+    {
+        "id": 5,
+        "name": "Hoa Pham",
+        "tel": "0909090909",
+        "permission": 1
+
+    }
+]
