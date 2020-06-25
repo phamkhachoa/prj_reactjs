@@ -43,6 +43,8 @@ class App extends Component {
           <div className="container">
             <div className="row">
               <Search doiTrangThai={() => this.doiTrangThai()} hienThiForm={this.state.hienThiForm} getTextSearch = {(dl) => this.getTextSearch(dl)}/>
+            </div>
+            <div className="row">
               <TableData dataUser={ketqua}/>
               <AddUser hienThiForm={this.state.hienThiForm} />
             </div>
