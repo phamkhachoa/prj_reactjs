@@ -11,7 +11,8 @@ class App extends Component {
     super(props);
     this.state = {
       hienThiForm: true,
-      dataUser: DataUser
+      dataUser: DataUser,
+      textSearch: ''
     }
   }
 
@@ -20,16 +21,29 @@ class App extends Component {
       hienThiForm : !this.state.hienThiForm
     });
   }
+
+  getTextSearch = (dl) => {
+    this.setState({
+      textSearch: dl
+    })
+    console.log(this.state.textSearch)
+  }
   
   render () {
+    var ketqua = []
+    this.state.dataUser.forEach(element => {
+      if(element.name.indexOf(this.state.textSearch) !== -1) {
+        ketqua.push(element)
+      }
+    });
     return (
       <div>
         <Header />
         <div className="searchForm">
           <div className="container">
             <div className="row">
-              <Search doiTrangThai={() => this.doiTrangThai()} hienThiForm={this.state.hienThiForm} />
-              <TableData dataUser={this.state.dataUser}/>
+              <Search doiTrangThai={() => this.doiTrangThai()} hienThiForm={this.state.hienThiForm} getTextSearch = {(dl) => this.getTextSearch(dl)}/>
+              <TableData dataUser={ketqua}/>
               <AddUser hienThiForm={this.state.hienThiForm} />
             </div>
           </div>

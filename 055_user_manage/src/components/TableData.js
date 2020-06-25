@@ -6,7 +6,7 @@ class TableData extends Component {
   mappingDataUser = () => {
     return (
       this.props.dataUser.map((value, key) => (
-        <TableDataRow dataUser = {value}/>
+        <TableDataRow dataUser = {value} key={key}/>
       ))
     )
     
