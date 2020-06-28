@@ -19,12 +19,12 @@ class TableDataRow extends Component {
     render() {
         return (
             <tr>
-                <td >{this.props.dataUser.id}</td>
+                <td >{this.props.keys}</td>
                 <td>{this.props.dataUser.name}</td>
                 <td>{this.props.dataUser.tel}</td>
                 {this.permissionShow()}
                 <td>
-                    <div className="btn btn-warning sua"><i className="fa fa-edit    " /> Sửa</div>
+                    <div className="btn btn-warning sua" onClick={this.props.editUser} ><i className="fa fa-edit  " /> Sửa</div>
                     <div className="btn btn-danger xoa"><i className="fa fa-edit    " /> Xóa</div>
                 </td>
             </tr>

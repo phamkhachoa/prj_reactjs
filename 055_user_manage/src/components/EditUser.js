@@ -1,39 +1,10 @@
 import React, { Component } from 'react';
 
-class AddUser extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-           trangThaiChinhSua : false,
-           id: "",
-           name: "",
-           tel: "",
-           permission: ""
-        }
-    }
-
-    isChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        this.setState({
-            [name]: value
-        })
-
-        // package to item
-        var item = {};
-        item.id = this.state.id;
-        item.name = this.state.name;
-        item.tel = this.state.tel;
-        item.permission = this.state.permission;
-        this.setState({
-            item: item
-        })
-    }
-    
-    kiemTraTrangThai = () => {
-        if (this.props.hienThiForm === true) {
-            return(
-                <div className="card border-primary text-left mt-2">
+class EditUser extends Component {
+    render() {
+        return (
+            <div className="col-12">
+            <div className="card border-primary text-left mt-2">
                     <form>
                     <div className="card-body text-primary">
                         <div className="form-group">
@@ -60,35 +31,9 @@ class AddUser extends Component {
                     </div>
                     </form>
                 </div>
-            )
-        }
-    }
-
-    thayDoiTrangThai = () => {
-        this.setState ({
-            trangThaiChinhSua : !this.state.trangThaiChinhSua
-        });
-    }
-
-    hienThiNut = () => {
-        if (this.state.trangThaiChinhSua === true) {
-            return(
-                <div className="btn btn-block btn-outline-secondary" onClick={() => this.thayDoiTrangThai()}>Đóng Lại</div>
-            )
-        } else {
-            return(
-                <div className="btn btn-block btn-outline-info" onClick={() => this.thayDoiTrangThai()}>Thêm Mới</div>
-            )
-        }
-    }
-    
-    render() {
-        return (
-            <div>
-                {this.kiemTraTrangThai()}   
-            </div>
+                </div>
         );
     }
 }
 
-export default AddUser;
+export default EditUser;

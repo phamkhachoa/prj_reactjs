@@ -4,7 +4,8 @@ import Header from './Header';
 import Search from './Search';
 import TableData from './TableData';
 import AddUser from './AddUser';
-import DataUser from './Data.json'
+import DataUser from './Data.json';
+import { v4 as uuidv4 } from 'uuid';
 
 class App extends Component {
   constructor(props) {
@@ -28,6 +29,23 @@ class App extends Component {
     })
     console.log(this.state.textSearch)
   }
+  getNewUserData = (name, tel, permission) => {
+    var item = {};
+        item.id = uuidv4();;
+        item.name = name;
+        item.tel = tel;
+        item.permission = permission;
+    var items = this.state.dataUser;
+    items.push(item);
+    this.setState({
+      dataUser: items
+    })
+  }
+
+  editUser = (user) => {
+    console.log('ket noi ok');
+    console.log(user);
+  }
   
   render () {
     var ketqua = []
@@ -45,8 +63,8 @@ class App extends Component {
               <Search doiTrangThai={() => this.doiTrangThai()} hienThiForm={this.state.hienThiForm} getTextSearch = {(dl) => this.getTextSearch(dl)}/>
             </div>
             <div className="row">
-              <TableData dataUser={ketqua}/>
-              <AddUser hienThiForm={this.state.hienThiForm} />
+              <TableData dataUser={ketqua} editUser = {(user) => this.editUser(user)}/>
+              <AddUser hienThiForm={this.state.hienThiForm} getNewUserData = {(name, tel, permisson) => {this.getNewUserData(name, tel, permisson)}}/>
             </div>
           </div>
         </div>
